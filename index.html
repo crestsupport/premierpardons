@@ -3,65 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premier Pardons - Canadian Pardon Experts</title>
+    <title>Premier Pardons - Home</title>
     <style>
-        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; color: #333; line-height: 1.6; }
-        header { background-color: #2c3e50; color: #fff; text-align: center; padding: 2rem 0; }
-        header h1 { margin: 0; font-size: 2.5em; }
-        .container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
-        .issues { background-color: #e74c3c; color: #fff; padding: 2rem; text-align: center; margin-bottom: 2rem; border-radius: 5px; }
-        .issues h2 { margin: 0 0 1rem; font-size: 1.8em; }
-        .issues ul { list-style: none; padding: 0; }
-        .issues li { margin-bottom: 0.5rem; }
-        .about { background-color: #fff; padding: 2rem; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .about h2 { color: #2c3e50; }
-        .cta { text-align: center; margin-top: 2rem; }
-        .cta a { background-color: #3498db; color: #fff; padding: 1rem 2rem; text-decoration: none; border-radius: 5px; font-weight: bold; }
-        .cta a:hover { background-color: #2980b9; }
-        footer { text-align: center; padding: 1rem; background-color: #2c3e50; color: #fff; margin-top: 2rem; }
-        nav { background-color: #34495e; padding: 1rem; }
-        nav a { color: #fff; margin: 0 1rem; text-decoration: none; font-weight: 500; }
-        nav a:hover { color: #3498db; }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+        }
+        .highlight {
+            background-color: #e74c3c;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 1rem;
+            cursor: pointer;
+        }
+        .highlight a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .highlight a:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background-color: #34495e;
+            padding: 1rem;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 1rem;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        nav a:hover {
+            color: #3498db;
+        }
+        .content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #2c3e50;
+            color: #fff;
+            margin-top: 2rem;
+        }
     </style>
 </head>
 <body>
+    <header id="home">
+        <h1>Welcome to Premier Pardons</h1>
+        <p>Helping you reclaim your future with professional pardon services.</p>
+        <div class="highlight" id="downloadButton">
+            <a href="#" onclick="downloadEBook()">Download Free E-Book Now!</a>
+        </div>
+    </header>
+
     <nav>
         <a href="#home">Home</a>
         <a href="#about">About Us</a>
-        <a href="terms-of-use.html">Terms of Use</a>
-        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="/terms-of-use.html">Terms of Use</a>
+        <a href="/privacy-policy.html">Privacy Policy</a>
     </nav>
-    <header id="home">
-        <h1>Premier Pardons</h1>
-        <p>Your Trusted Canadian Pardon Specialists</p>
-    </header>
-    <div class="container">
-        <div class="issues">
-            <h2>Have You Been Turned Away?</h2>
-            <p>If you answer yes to any of these, Premier Pardons can help you:</p>
-            <ul>
-                <li>Turned away at the border</li>
-                <li>Unable to get employment or promotion</li>
-                <li>Denied a voluntary coaching opportunity</li>
-                <li>Unable to be bonded</li>
-                <li>Unable to obtain citizenship</li>
-                <li>Unable to visit the U.S.</li>
-                <li>Denied custody of your children?</li>
-            </ul>
-        </div>
-        <div class="about" id="about">
-            <h2>About Us</h2>
-            <p>At Premier Pardons, we’re a small, passionate team with years of experience in pardons, record suspensions, and U.S. waivers. We’ve walked alongside thousands of Canadians, helping them reclaim their careers, travel freely to the U.S., and secure custody of their children by clearing burdensome records. Our drive comes from seeing lives change—every success story fuels us. We offer personalized support, working tirelessly until your case is resolved.</p>
-        </div>
-        <div class="cta">
-            <p>Download our free e-book to learn about pardons, record suspensions, and U.S. waivers.</p>
-            <a href="ebook.pdf" download>Get Free E-Book</a>
-            <p>Or schedule a free consultation with one of our specialists.</p>
-            <a href="mailto:consult@premierpardons.ca?subject=Free%20Consultation">Book Free Consultation</a>
-        </div>
+
+    <div class="content">
+        <h2>About Us</h2>
+        <p>Premier Pardons is dedicated to assisting individuals in Canada with obtaining pardons and record suspensions. Our expert team provides personalized support to help you move forward with a clean slate.</p>
+        <p>Contact us today to start your journey towards a brighter future!</p>
     </div>
+
     <footer>
         <p>© 2025 Premier Pardons. All rights reserved.</p>
     </footer>
+
+    <script>
+        function downloadEBook() {
+            const eBookContent = `
+Pardons, Record Suspensions, and U.S. Waivers: The Basics
+A Guide to Reclaiming Your Future
+Prepared by Premier Pardons
+June 2025
+
+Table of Contents
+1. Introduction
+   1.1 What This Guide Covers
+2. Pardons and Record Suspensions
+   2.1 Eligibility Criteria
+   2.2 The Application Process
+3. U.S. Entry Waivers
+   3.1 Understanding U.S. Border Policies
+   3.2 Applying for a Waiver
+4. Conclusion
+   4.1 Next Steps
+5. Bibliography
+
+1. Introduction
+1.1 What This Guide Covers
+Starting a journey toward clearing your criminal record can be daunting, but it’s a crucial step toward rebuilding your life. This e-book, prepared by Premier Pardons, offers a comprehensive introduction to pardons and record suspensions in Canada, as well as U.S. entry waivers for individuals with a criminal history. Whether you’re looking to remove the barriers of a past conviction or gain the freedom to travel, this guide provides the foundational knowledge you need. We’ll explore eligibility, the application process, and key considerations to help you make informed decisions.
+
+2. Pardons and Record Suspensions
+2.1 Eligibility Criteria
+In Canada, a record suspension (formerly called a pardon) allows individuals to have their criminal record kept separate and apart from other criminal records. To be eligible, you must meet the following criteria:
+- You have completed all sentences, including jail time, probation, and paid all fines.
+- A waiting period has passed: 10 years for indictable (felony) offenses, or 5 years for summary (misdemeanor) offenses, measured from the completion of your sentence.
+- You have had no new convictions during the waiting period.
+- You demonstrate good conduct, meaning no further involvement with law enforcement.
+Certain offenses, such as those involving sexual offenses against minors, may render you ineligible under the Criminal Records Act.
+
+2.2 The Application Process
+Applying for a record suspension involves several steps:
+- Obtain your criminal record and court information from the RCMP and local courts.
+- Complete the necessary forms, including the Application for Record Suspension and Local Police Records Check.
+- Pay the application fee (currently around $657 CAD, subject to change).
+- Submit your application to the Parole Board of Canada (PBC), which reviews and decides on approvals.
+Premier Pardons can assist with document preparation and submission to streamline this process. Processing times typically range from 6 months to a year, depending on case complexity.
+
+3. U.S. Entry Waivers
+3.1 Understanding U.S. Border Policies
+A criminal record can prevent entry into the United States due to the U.S. Immigration and Nationality Act, which bars individuals with convictions for crimes of moral turpitude or other offenses. Even with a Canadian record suspension, U.S. authorities can still access your record via the CPIC database. A U.S. Entry Waiver (Form I-192, Application for Advance Permission to Enter) is required to overcome this barrier, allowing temporary entry for work, travel, or family visits.
+
+3.2 Applying for a Waiver
+The waiver process includes:
+- Completing Form I-192, available from U.S. Citizenship and Immigration Services (USCIS).
+- Providing detailed personal information, criminal history, and supporting documents (e.g., court records, character references).
+- Paying the filing fee (approximately $930, plus biometrics, subject to change).
+- Submitting the application to a U.S. consulate or USCIS, which may take 6-12 months for approval.
+Premier Pardons can guide you through this process, ensuring all documentation meets U.S. requirements. Approval is not guaranteed and depends on the nature of the offense and your current circumstances.
+
+4. Conclusion
+4.1 Next Steps
+Clearing your criminal record or securing a U.S. entry waiver is a significant step toward a brighter future. We encourage you to consult with Premier Pardons for personalized support tailored to your situation. Contact us at info@premierpardons.ca to begin your journey today. With professional assistance, you can overcome past challenges and open new opportunities.
+
+5. Bibliography
+- Government of Canada. "Record Suspension Guide." [Online] Available: https://www.canada.ca
+- U.S. Citizenship and Immigration Services. "I-192, Application for Advance Permission to Enter." [Online] Available: https://www.uscis.gov
+- General information based on Canadian and U.S. legal standards as of June 2025.
+            `;
+            const blob = new Blob([eBookContent], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Pardons-Record-Suspensions-and-US-Waivers-The-Basics.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+    </script>
 </body>
 </html>
