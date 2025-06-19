@@ -3,73 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premier Pardons assists with pardons, record suspensions, and U.S. entry waivers in Canada. Reclaim your future today!">
     <title>Premier Pardons - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #fff;
-            color: #333;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
             line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
         }
         header {
-            background-color: #3498db;
+            background-color: #1a2a44;
             color: #fff;
+            padding: 2rem 0;
             text-align: center;
-            padding: 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        .highlight {
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            font-size: 1.1rem;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #e67e22;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #d35400;
+        }
+        .limited-offer {
             background-color: #e74c3c;
             color: #fff;
-            padding: 0.5rem 1rem;
+            padding: 0.75rem 1.5rem;
             border-radius: 5px;
-            display: inline-block;
-            margin-top: 1rem;
-            cursor: pointer;
-        }
-        .highlight a {
-            color: #fff;
             text-decoration: none;
             font-weight: bold;
+            transition: background-color 0.3s;
         }
-        .highlight a:hover {
-            text-decoration: underline;
+        .limited-offer:hover {
+            background-color: #c0392b;
         }
         nav {
-            background-color: #34495e;
+            background-color: #2c3e50;
             padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         nav a {
             color: #fff;
-            margin: 0 1rem;
             text-decoration: none;
+            margin: 0 1.5rem;
             font-weight: 500;
+            transition: color 0.3s;
         }
         nav a:hover {
-            color: #3498db;
+            color: #e67e22;
         }
-        .content {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        .main-content {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        .main-content h2 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 2rem;
+            color: #1a2a44;
+            margin-bottom: 1rem;
+        }
+        .main-content p {
+            margin-bottom: 1rem;
         }
         footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: #2c3e50;
+            background-color: #1a2a44;
             color: #fff;
+            text-align: center;
+            padding: 1.5rem 0;
             margin-top: 2rem;
+        }
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 3fr 1fr;
+            }
+        }
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 200;
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+        .modal-content button {
+            background-color: #e67e22;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 0.5rem;
+            transition: background-color 0.3s;
+        }
+        .modal-content button:hover {
+            background-color: #d35400;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: #000;
         }
     </style>
 </head>
 <body>
-    <header id="home">
+    <header>
         <h1>Welcome to Premier Pardons</h1>
-        <p>Helping you reclaim your future with professional pardon services.</p>
-        <div class="highlight" id="downloadButton">
-            <a href="#" onclick="downloadEBook()">Download Free E-Book Now!</a>
-        </div>
+        <p>Reclaim Your Future with Professional Pardon Services</p>
+        <a href="#" class="cta-button" onclick="openModal()">Download Free E-Book</a>
     </header>
 
     <nav>
@@ -79,17 +169,40 @@
         <a href="/premierpardons/privacy-policy.html">Privacy Policy</a>
     </nav>
 
-    <div class="content">
-        <h2>About Us</h2>
-        <p>Premier Pardons is dedicated to assisting individuals in Canada with obtaining pardons and record suspensions. Our expert team provides personalized support to help you move forward with a clean slate.</p>
-        <p>Contact us today to start your journey towards a brighter future!</p>
+    <div class="container">
+        <main class="main-content">
+            <h2>About Us</h2>
+            <p>Premier Pardons is dedicated to assisting individuals in Canada with obtaining pardons and record suspensions. Our expert team has over 80 years of combined experience completing pardons, record suspensions, and U.S. waivers, ensuring you receive top-tier support. "Word of mouth" has allowed us to reduce customer acquisition costs, which we eagerly pass on to our customers without compromising service quality.</p>
+            <p>Whether you're seeking to travel to the U.S. with a waiver or clear your criminal record, we offer tailored solutions to meet your needs. Contact us today to start your journey towards a brighter future!</p>
+            <p><strong>Email:</strong> info@premierpardons.ca | <strong>Phone:</strong> (555) 123-4567</p>
+            <a href="https://buy.stripe.com/aFadQR2C6a2aapy25Fa7C04" class="limited-offer">Limited Time Offer - Tax Included Price of $899</a>
+        </main>
+        <aside class="sidebar">
+            <!-- Add sidebar content if needed, e.g., testimonials or quick links -->
+        </aside>
     </div>
 
     <footer>
-        <p>© 2025 Premier Pardons. All rights reserved.</p>
+        <p>© 2025 Premier Pardons. All rights reserved. | <a href="/premierpardons/privacy-policy.html" style="color: #e67e22;">Privacy Policy</a> | <a href="/premierpardons/terms-of-use.html" style="color: #e67e22;">Terms of Use</a></p>
     </footer>
 
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <h2>Download Confirmation</h2>
+            <p>Are you sure you want to download "Pardons, Record Suspensions, and U.S. Waivers: The Basics"?</p>
+            <button onclick="downloadEBook()">Yes, Download</button>
+            <button onclick="closeModal()">No, Cancel</button>
+        </div>
+    </div>
+
     <script>
+        function openModal() {
+            document.getElementById('modal').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
         function downloadEBook() {
             const eBookContent = `
 Pardons, Record Suspensions, and U.S. Waivers: The Basics
@@ -161,6 +274,13 @@ Clearing your criminal record or securing a U.S. entry waiver is a significant s
             a.click();
             document.body.removeChild(a);
             window.URL.revokeObjectURL(url);
+            closeModal();
+        }
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
         }
     </script>
 </body>
